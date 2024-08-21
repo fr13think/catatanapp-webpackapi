@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplikasi Catatan Harian</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <app-bar></app-bar>
+    <div class="container">
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Cari catatan...">
+        </div>
+        <note-form></note-form>
+        <div id="notesGrid"></div>
+    </div>
+
+    <edit-modal></edit-modal>
+    <app-footer></app-footer>
+
+    <script src="js/components/AppBarNote.js"></script>
+    <script src="js/components/NoteItem.js"></script>
+    <script src="js/components/NoteForm.js"></script>
+    <script src="js/components/EditModalNote.js"></script>
+    <script src="js/components/FooterNote.js"></script>
+    <script src="js/app.js" type="module"></script>
+</body>
+</html>

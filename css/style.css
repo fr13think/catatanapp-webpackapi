@@ -1,0 +1,122 @@
+/* Menetapkan tinggi elemen html dan body menjadi 100% dari viewport */
+html, body {
+  height: 100%;
+}
+
+/* Mengatur body untuk menggunakan flexbox dengan arah kolom, menetapkan font, dan transisi untuk warna latar dan teks */
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s, color 0.3s;
+  background-color: var(--background-light);
+  color: var(--text-light);
+}
+
+/* Kelas container untuk mengatur lebar maksimum dan margin otomatis untuk pusat konten */
+.container {
+  flex: 1 0 auto;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Mendefinisikan variabel warna untuk tema terang dan gelap */
+:root {
+  --background-light: #F2F2F7;
+  --background-dark: #1C1C1E;
+  --text-light: #000000;
+  --text-dark: #FFFFFF;
+  --accent-color: #007AFF;
+  --border-color: #C7C7CC;
+}
+
+/* Mengatur ulang beberapa gaya body yang sudah didefinisikan sebelumnya */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s, color 0.3s;
+  background-color: var(--background-light);
+  color: var(--text-light);
+}
+
+/* Mengaktifkan mode gelap dengan mengubah warna latar dan teks */
+body.dark-mode {
+  background-color: var(--background-dark);
+  color: var(--text-dark);
+}
+
+/* Kelas container dengan pengaturan yang sama seperti sebelumnya */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Kelas search-bar untuk mengatur margin bawah */
+.search-bar {
+  margin-bottom: 20px;
+}
+
+/* Mengatur gaya untuk input pencarian */
+#searchInput {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  font-size: 16px;
+  background-color: rgba(142, 142, 147, 0.12);
+}
+
+/* Kelas notes-section untuk mengatur margin bawah */
+.notes-section {
+  margin-bottom: 40px;
+}
+
+/* Mengatur tata letak grid untuk notes-grid */
+.notes-grid {
+  display: grid;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* Tata letak grid untuk catatan aktif dengan kolom responsif */
+.active-notes {
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+/* Tata letak grid untuk catatan yang diarsipkan dengan satu kolom */
+.archived-notes {
+  grid-template-columns: 1fr;
+}
+
+/* Mengatur gaya untuk judul h2 dengan warna aksen */
+h2 {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  color: var(--accent-color);
+  font-size: 24px;
+}
+
+/* Mengatur gaya untuk span di dalam h2 */
+h2 span {
+  font-size: 18px;
+  color: var(--accent-color);
+}
+
+/* Media query untuk tata letak grid pada viewport dengan lebar minimal 768px */
+@media (min-width: 768px) {
+  .active-notes {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Media query untuk tata letak grid pada viewport dengan lebar minimal 1024px */
+@media (min-width: 1024px) {
+  .active-notes {
+      grid-template-columns: repeat(3, 1fr);
+  }
+}
